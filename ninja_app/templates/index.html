@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ninja_gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}" />
+</head>
+<body>
+<div class="container">
+    <div class="bloque_1">
+        <p class="oro">Tu oro:</p> <p class="oro"> {{ request.session.oro }} </p>
+    </div>
+    <div class="bloque_2">
+        <div class="sub_blocke1-4">
+            <h1> Granja</h1>
+            <p>gana 10-20 monedas</p>
+            <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="lugar" value="granja" />
+            <input type="submit" value="Ganar oro" class="boton_submit" />
+          </form>
+        </div>
+        <div class="sub_blocke1-4">
+            <h1> Cueva</h1>
+                <p>gana 5-10 monedas</p>
+                <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="lugar" value="cueva" />
+                <input type="submit" value="encontrar oro" class="boton_submit" />
+                </form>
+        </div>
+        <div class="sub_blocke1-4">
+            <h1> Casa</h1>
+            <p>gana 2-5 monedas</p>
+            <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="lugar" value="casa" />
+            <input type="submit" value="buscar oro" class="boton_submit" />
+          </form>
+        </div>
+        <div class="sub_blocke1-4">
+            <h1> Casino</h1>
+            <p>Juega 0-50 monedas</p>
+            <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="lugar" value="casino" />
+            <input type="submit" value="jugar oro" class="boton_submit" />
+          </form>
+        </div>
+    </div>
+
+    <div class="bloque_3">
+        <p>Actividades:</p>
+        <ul class="actividades">
+          {% for act in request.session.actividad reversed%}
+
+            {{ act | safe}}
+
+          {% endfor %}
+        </ul>
+        </p>
+    </div>
+        <p>
+          <form action="/limpiar_session" method="post">
+            {% csrf_token %}
+
+            <input type="submit" value="Reiniciar" class="boton_submit">
+          </form>
+        </p>
+
+</div>
+</body>
+</html>

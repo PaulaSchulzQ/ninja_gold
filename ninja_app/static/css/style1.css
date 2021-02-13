@@ -1,0 +1,66 @@
+.container{
+    width: 970px;
+    margin: 0 auto;
+    background: rosybrown;
+    font-family: "Comic Sans MS";
+    padding: 60px;
+    font-size: 20px;
+}
+
+.bloque_1{
+    width: 800px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.oro{
+    width: 120px;
+    height: 52px;
+    background-color: snow;
+    border: solid black 5px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 35px;
+    text-align: center;
+    color: yellow;
+    text-shadow: -2px -2px 1px #000
+}
+
+.sub_blocke1-4{
+    width: 200px;
+    height: 200px;
+    background-color: snow;
+    border: solid black 5px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin-right: 25px;
+}
+
+.boton_submit{
+    background-color: lightcoral;
+    border: solid black 5px;
+    font-size: 25px;
+}
+
+.actividades{
+    width: 900px;
+    height: 200px;
+    background-color: snow;
+    border: solid black 2px;
+    overflow: scroll;
+}
+
+
+.bloque_3{
+
+}
+
+.estado_ganar{
+    color: green;
+}
+
+.estado_perder{
+    color: red;
+}
